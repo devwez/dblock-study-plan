@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>D Block · November 2026 Study Plan</title>
+<meta name="description" content="Daily study plan for the D Block November 2026 exams. Five subjects, two hours a day, target 90%.">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="mesh" aria-hidden="true"></div>
+<div class="grain" aria-hidden="true"></div>
+
+<header class="top">
+  <div class="brand">
+    <div class="mark" aria-hidden="true">DB</div>
+    <div>
+      <p class="eyebrow">Michaelhouse · D Block</p>
+      <h1>November 2026</h1>
+    </div>
+  </div>
+  <div class="top-right">
+    <div class="target">
+      <span>Target average</span>
+      <b>90%</b>
+    </div>
+    <div class="next" id="nextExam">
+      <span>Next paper</span>
+      <b>—</b>
+    </div>
+  </div>
+</header>
+
+<main class="shell">
+  <section class="main">
+    <div class="kpis" id="kpis"></div>
+
+    <section class="panel calendar-wrap" aria-labelledby="calTitle">
+      <div class="panel-head">
+        <div>
+          <h2 id="calTitle">Every day</h2>
+          <p class="sub">26 October — 26 November · click a day</p>
+        </div>
+        <div class="legend" aria-hidden="true">
+          <span><i class="sw" style="--c:#f5a524"></i>study</span>
+          <span><i class="sw exam"></i>exam</span>
+          <span><i class="sw rest"></i>rest</span>
+        </div>
+      </div>
+      <div class="weekdays" aria-hidden="true">
+        <span>Mon</span><span>Tue</span><span>Wed</span><span>Thu</span><span>Fri</span><span>Sat</span><span>Sun</span>
+      </div>
+      <div class="calendar" id="calendar"></div>
+    </section>
+
+    <section class="panel day-panel" id="dayPanel" aria-live="polite"></section>
+  </section>
+
+  <aside class="aside">
+    <section class="panel gauge-panel">
+      <div class="panel-head tight">
+        <h2>Prep score</h2>
+        <span class="pill" id="pacePill">—</span>
+      </div>
+      <div class="gauge">
+        <svg viewBox="0 0 160 160" role="img" aria-label="Preparation score">
+          <circle class="g-bg" cx="80" cy="80" r="64"></circle>
+          <circle class="g-fg" id="gaugeFg" cx="80" cy="80" r="64" transform="rotate(-90 80 80)"></circle>
+          <line class="g-tick" x1="80" y1="8" x2="80" y2="20" transform="rotate(324 80 80)"></line>
+        </svg>
+        <div class="gauge-num"><b id="scoreNum">0</b><span>%</span></div>
+      </div>
+      <p class="fine">Coverage of the examinable sections, weighted by paper length. Not a predicted mark — 90% is the target average.</p>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head tight">
+        <h2>Subjects</h2>
+        <span class="sub" id="sectionCount">0 / 0</span>
+      </div>
+      <div class="subjects" id="subjects"></div>
+    </section>
+
+    <section class="panel">
+      <div class="panel-head tight">
+        <h2>Exam dates</h2>
+      </div>
+      <ol class="exams" id="exams"></ol>
+    </section>
+
+    <section class="panel pace-panel" id="pacePanel"></section>
+  </aside>
+</main>
+
+<footer class="foot">
+  <p>2 hours a day · 2 subjects · 2 sections each · 5-minute error log at the end.</p>
+  <button id="resetBtn" type="button">Reset progress</button>
+</footer>
+
+<script src="data.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
