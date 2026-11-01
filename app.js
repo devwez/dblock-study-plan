@@ -247,7 +247,7 @@ function renderDay(date) {
       const s = SUBJECTS[b.subject];
       const items = blockItems(b);
       const kindLabel = b.kind === "practice" ? "practice" : b.kind === "revision" ? "revision" : b.kind === "recall" ? "light" : "study";
-      const dur = b.kind === "recall" ? "30 min" : "50 min";
+      const dur = b.kind === "recall" ? "30 min" : "65 min";
       return `
         <article class="block" style="--c:${s.colour}">
           <div class="block-head">
@@ -269,7 +269,7 @@ function renderDay(date) {
 
   const frame =
     day.blocks.length > 1
-      ? `<div class="frame"><span>5 min recall</span><span>2 × 50 min</span><span>10 min break</span><span>5 min error log</span></div>`
+      ? `<div class="frame"><span>5 min recall</span><span>3 × 65 min</span><span>2 × 10 min breaks</span><span>5 min error log</span></div>`
       : `<div class="frame"><span>${day.light ? "Light day" : "Exam day"}</span><span>One short session</span><span>Sleep early</span></div>`;
 
   panel.innerHTML = `
