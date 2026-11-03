@@ -243,7 +243,7 @@ function renderDay(date) {
     : "";
 
   const blocks = day.blocks
-    .map((b) => {
+    .map((b, bi) => {
       const s = SUBJECTS[b.subject];
       const items = blockItems(b);
       const kindLabel = b.kind === "practice" ? "practice" : b.kind === "revision" ? "revision" : b.kind === "recall" ? "light" : "study";
@@ -263,6 +263,16 @@ function renderDay(date) {
               )
               .join("")}
           </ul>
+          ${(() => {
+            const checks = (typeof CHECKS !== "undefined" && CHECKS[`${date}:${bi}`]) || null;
+            if (!checks) return "";
+            return `<details class="check"><summary>Check yourself · ${checks.length} questions</summary>
+              <ol class="qs">${checks.map(([q]) => `<li>${esc(q)}</li>`).join("")}</ol>
+              <details class="answers"><summary>Show answers</summary>
+                <ol>${checks.map(([, a]) => `<li>${esc(a)}</li>`).join("")}</ol>
+              </details>
+            </details>`;
+          })()}
         </article>`;
     })
     .join("");

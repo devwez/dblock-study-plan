@@ -639,3 +639,18 @@ h1 {
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation: none !important; transition: none !important; }
 }
+
+.check { margin-top: 10px; border-top: 1px solid var(--line); padding-top: 8px; }
+.check summary {
+  cursor: pointer; list-style: none; font-size: 9.5px; letter-spacing: 0.1em;
+  text-transform: uppercase; color: var(--accent); font-weight: 700;
+}
+.check summary::-webkit-details-marker { display: none; }
+.check summary::before { content: "+ "; }
+.check[open] > summary::before { content: "\2212 "; }
+.qs { margin: 8px 0 6px; padding-left: 16px; font-size: 11.5px; color: #d6dbe4;
+  display: flex; flex-direction: column; gap: 4px; }
+.answers { margin-top: 4px; }
+.answers summary { color: var(--muted); font-size: 9px; }
+.answers ol { margin: 6px 0 0; padding-left: 16px; font-size: 10.5px; color: var(--muted);
+  display: flex; flex-direction: column; gap: 3px; }
